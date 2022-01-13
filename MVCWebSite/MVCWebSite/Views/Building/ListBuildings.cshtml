@@ -1,0 +1,79 @@
+﻿@model IEnumerable<MVCWebSite.ViewModels.BuildingViewModel>
+
+@{
+    ViewBag.Title = "List of Buildings";
+}
+
+<h2>Building Information</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingPhoneNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumFloors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumConfRoom)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingPhoneNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumFloors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumConfRoom)
+        </td>
+    </tr>
+}
+
+</table>

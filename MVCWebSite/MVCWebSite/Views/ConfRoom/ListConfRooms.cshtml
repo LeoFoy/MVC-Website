@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVCWebSite.ViewModels.ConfRoomViewModel>
+
+@{
+    ViewBag.Title = "List of Conference Rooms";
+}
+
+<h2>Conference Room Information</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomBuilding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomPhoneNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AVCapable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomCapacity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomBuilding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomPhoneNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AVCapable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomCapacity)
+        </td>
+    </tr>
+}
+
+</table>
