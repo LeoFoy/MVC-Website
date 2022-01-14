@@ -8,8 +8,6 @@ namespace MVCWebSite.ViewModels
 {
     public class BuildingViewModel
     {
-        [Display(Name = "ID")]
-        public int BuildingID { get; set; }
         [Display(Name = "Name")]
         public string BuildingName { get; set; }
         [Display(Name = "Street")]

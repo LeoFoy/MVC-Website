@@ -1,0 +1,53 @@
+﻿@model MVCWebSite.ViewModels.ConfRoomViewModel
+
+@{
+    ViewBag.Title = "SaveConfRoomInfo";
+}
+
+<h2>Enter New Conference Room Information</h2>
+<div>
+    <h4>Conference Room Information Saved Successfully</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomBuilding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomBuilding)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomPhoneNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomPhoneNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AVCapable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AVCapable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomCapacity)
+        </dd>
+
+    </dl>
+</div>

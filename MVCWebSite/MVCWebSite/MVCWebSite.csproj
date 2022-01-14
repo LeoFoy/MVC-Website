@@ -170,6 +170,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ConfRoom\ListConfRooms.cshtml" />
     <Content Include="Views\Building\ListBuildings.cshtml" />
+    <Content Include="Views\Building\EnterBuildingInfo.cshtml" />
+    <Content Include="Views\Building\SaveBuildingInfo.cshtml" />
+    <Content Include="Views\ConfRoom\EnterConfRoomInfo.cshtml" />
+    <Content Include="Views\ConfRoom\SaveConfRoomInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

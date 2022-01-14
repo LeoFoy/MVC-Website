@@ -16,6 +16,16 @@ namespace MVCWebSite.Controllers
             return View();
         }
 
+        public ActionResult EnterConfRoomInfo()
+        {
+            return View();
+        }
+        public ActionResult SaveConfRoomInfo(ConfRoomViewModel cvm)
+        {
+            ConfRoomModels confRoomModels = ConvertToModel(cvm);
+
+            return View(cvm);
+        }
         public ActionResult ListConfRooms()
         {
             List<ConfRoomModels> confRoomModels = CreateData();
@@ -235,10 +245,20 @@ namespace MVCWebSite.Controllers
 
             return confRoomModels;
         }
+        private ConfRoomModels ConvertToModel(ConfRoomViewModel cvm)
+        {
+            ConfRoomModels cm = new ConfRoomModels();
+            cm.RoomName = cvm.RoomName;
+            cm.RoomBuilding = cvm.RoomBuilding;
+            cm.RoomPhoneNum = cvm.RoomPhoneNum;
+            cm.AVCapable = cvm.AVCapable;
+            cm.RoomCapacity = cvm.RoomCapacity;
+
+            return cm;
+        }
         private ConfRoomViewModel ConvertToViewModel(ConfRoomModels cm)
         {
             ConfRoomViewModel cvm = new ConfRoomViewModel();
-            cvm.RoomID = cm.RoomID;
             cvm.RoomName = cm.RoomName;
             cvm.RoomBuilding = cm.RoomBuilding;
             cvm.RoomPhoneNum = cm.RoomPhoneNum;

@@ -8,8 +8,6 @@ namespace MVCWebSite.ViewModels
 {
     public class ConfRoomViewModel
     {
-        [Display(Name = "ID")]
-        public int RoomID { get; set; }
         [Display(Name = "Room Name")]
         public string RoomName { get; set; }
         [Display(Name = "Building")]

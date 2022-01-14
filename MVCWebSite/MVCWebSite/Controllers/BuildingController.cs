@@ -16,6 +16,20 @@ namespace MVCWebSite.Controllers
             return View();
         }
 
+        public ActionResult EnterBuildingInfo()
+        {
+            return View();
+        }
+
+        public ActionResult SaveBuildingInfo(BuildingViewModel bvm)
+        {
+
+            BuildingModel buildingModel = ConvertToModel(bvm);
+
+            return View(bvm);
+        }
+
+
         public ActionResult ListBuildings()
         {
             List<BuildingModel> buildingModel1 = CreateData();
@@ -106,10 +120,24 @@ namespace MVCWebSite.Controllers
 
             return buildingModels;
         }
+        private BuildingModel ConvertToModel(BuildingViewModel bvm)
+        {
+            BuildingModel bm = new BuildingModel();
+            bm.BuildingName = bvm.BuildingName;
+            bm.BuildingStreet = bvm.BuildingStreet;
+            bm.BuildingCity = bvm.BuildingCity;
+            bm.BuildingState = bvm.BuildingState;
+            bm.BuildingZip = bvm.BuildingZip;
+            bm.BuildingCountry = bvm.BuildingCountry;
+            bm.BuildingPhoneNum = bvm.BuildingPhoneNum;
+            bm.NumFloors = bvm.NumFloors;
+            bm.NumConfRoom = bvm.NumConfRoom;
+
+            return bm;
+        }
         private BuildingViewModel ConvertToViewModel(BuildingModel bm)
         {
             BuildingViewModel bvm = new BuildingViewModel();
-            bvm.BuildingID = bm.BuildingID;
             bvm.BuildingName = bm.BuildingName;
             bvm.BuildingStreet = bm.BuildingStreet;
             bvm.BuildingCity = bm.BuildingCity;
