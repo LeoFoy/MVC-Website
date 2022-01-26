@@ -5,7 +5,19 @@
 }
 
 <h2>Enter New Conference Room Information</h2>
-
+@{ 
+    if(Model != null)
+    {
+        if (Model.EntrySuccess)
+        {
+            <h4>Entry accepted for the @Model.RoomName room in the @Model.RoomBuilding building</h4>
+        }
+        else
+        {
+            <h4>@Model.Message</h4>
+        }
+    }
+}
 @using (Html.BeginForm("SaveConfRoomInfo", "ConfRoom", FormMethod.Post))
 {
     @Html.AntiForgeryToken()

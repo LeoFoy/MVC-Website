@@ -24,9 +24,19 @@ namespace MVCWebSite.Controllers
         public ActionResult SaveBuildingInfo(BuildingViewModel bvm)
         {
 
-            BuildingModel buildingModel = ConvertToModel(bvm);
-
-            return View(bvm);
+            
+            bvm.EntrySuccess = false;
+            if (bvm.BuildingName != null && bvm.BuildingStreet != null && bvm.BuildingCity != null && bvm.BuildingState != null && bvm.BuildingZip != 0 && bvm.BuildingCountry != null &&
+                bvm.BuildingPhoneNum != null && bvm.NumFloors != 0 && bvm.NumConfRoom != 0)
+            {
+                BuildingModel buildingModel = ConvertToModel(bvm);
+                bvm.EntrySuccess = true;
+            }
+            else
+            {
+                bvm.Message = "Please provide info for: Name, Street, City, State, Zip Code, Country, Phone Number, Number of Floors, and Number of Conference Rooms";
+            }
+            return View("EnterBuildingInfo",bvm);
         }
 
 

@@ -22,9 +22,19 @@ namespace MVCWebSite.Controllers
         }
         public ActionResult SaveConfRoomInfo(ConfRoomViewModel cvm)
         {
-            ConfRoomModels confRoomModels = ConvertToModel(cvm);
+            cvm.EntrySuccess = false;
+            if(cvm.RoomName != null && cvm.RoomBuilding != null && cvm.RoomPhoneNum != null && cvm.RoomCapacity != 0)
+            {
+                ConfRoomModels confRoomModels = ConvertToModel(cvm);
+                cvm.EntrySuccess = true;
+            }
+            else
+            {
+                cvm.Message = "Please provide info for: Room Name, Building, Room Phone Number, and the Room Capacity";
+            }
+            
 
-            return View(cvm);
+            return View("EnterConfRoomInfo",cvm);
         }
         public ActionResult ListConfRooms()
         {
