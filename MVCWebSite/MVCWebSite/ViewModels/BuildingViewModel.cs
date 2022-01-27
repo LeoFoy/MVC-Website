@@ -35,6 +35,8 @@ namespace MVCWebSite.ViewModels
         [Required]
         [Display(Name = "Number of Conference Rooms")]
         public int NumConfRoom { get; set; }
+        public string BuildingClass { get; set; }
+        public string BuildingType { get; set; }
         public bool EntrySuccess { get; set; }
         public string Message { get; set; }
     }

@@ -17,5 +17,7 @@ namespace MVCWebSite.Models
         public string BuildingPhoneNum { get; set; }
         public int NumFloors { get; set; }
         public int NumConfRoom { get; set; }
+        public string BuildingClass { get; set; }
+        public string BuildingType { get; set; }
     }
 }

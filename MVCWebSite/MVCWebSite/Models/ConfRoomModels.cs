@@ -13,5 +13,6 @@ namespace MVCWebSite.Models
         public string RoomPhoneNum { get; set; }
         public bool AVCapable { get; set; }
         public int RoomCapacity { get; set; }
+        public string Size { get; set; }
     }
 }

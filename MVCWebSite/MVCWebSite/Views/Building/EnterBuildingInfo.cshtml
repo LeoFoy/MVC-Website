@@ -5,12 +5,13 @@
 }
 
 <h2>Enter New Building Information</h2>
-@{ 
+@{
     if (Model != null)
     {
         if (Model.EntrySuccess)
         {
             <h4>Entry accepted for the @Model.BuildingName building in @Model.BuildingCity</h4>
+            <h4>The @Model.BuildingName building is a @Model.BuildingClass and a @Model.BuildingType</h4>
         }
         else
         {

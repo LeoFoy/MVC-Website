@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCWebSite.Models;
 using MVCWebSite.ViewModels;
+using MVCWebSite.BusinessLogic;
 
 namespace MVCWebSite.Controllers
 {
@@ -23,8 +24,17 @@ namespace MVCWebSite.Controllers
 
         public ActionResult SaveBuildingInfo(BuildingViewModel bvm)
         {
+            BuildingBL buildingBL = new BuildingBL();
 
-            
+            if (bvm.BuildingCity != null)
+            {
+                bvm.BuildingClass = buildingBL.DetermineClass(bvm.BuildingCity);
+            }
+            if (bvm.NumFloors != 0)
+            {
+                bvm.BuildingType = buildingBL.DetermineType(bvm.NumFloors);
+            }
+
             bvm.EntrySuccess = false;
             if (bvm.BuildingName != null && bvm.BuildingStreet != null && bvm.BuildingCity != null && bvm.BuildingState != null && bvm.BuildingZip != 0 && bvm.BuildingCountry != null &&
                 bvm.BuildingPhoneNum != null && bvm.NumFloors != 0 && bvm.NumConfRoom != 0)

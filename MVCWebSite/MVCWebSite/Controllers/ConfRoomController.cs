@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCWebSite.Models;
 using MVCWebSite.ViewModels;
+using MVCWebSite.BusinessLogic;
 
 namespace MVCWebSite.Controllers
 {
@@ -22,6 +23,13 @@ namespace MVCWebSite.Controllers
         }
         public ActionResult SaveConfRoomInfo(ConfRoomViewModel cvm)
         {
+            ConfRoomBL confRoomBL = new ConfRoomBL();
+            if (cvm.RoomCapacity != 0)
+            {
+                cvm.Size = confRoomBL.DetermineSize(cvm.RoomCapacity);
+            }
+
+
             cvm.EntrySuccess = false;
             if(cvm.RoomName != null && cvm.RoomBuilding != null && cvm.RoomPhoneNum != null && cvm.RoomCapacity != 0)
             {

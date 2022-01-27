@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BusinessLogic\BuildingBL.cs" />
+    <Compile Include="BusinessLogic\ConfRoomBL.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\ConfRoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

@@ -23,6 +23,7 @@ namespace MVCWebSite.ViewModels
         [Required]
         [Display(Name = "Room Capacity")]
         public int RoomCapacity { get; set; }
+        public string Size { get; set; }
         public bool EntrySuccess { get; set; }
         public string Message { get; set; }
     }
